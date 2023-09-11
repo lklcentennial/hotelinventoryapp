@@ -1,0 +1,23 @@
+<!-- {{}} interpolation syntax -->
+
+<h1>Welcome to {{ hotelName }}</h1> 
+
+<div [hidden]="hideRooms">
+    Number of Rooms:
+    <div *ngIf="rooms.availableRooms > 0" [ngStyle]="{color: rooms.availableRooms ? 'blue' : 'red'}" [innerText]="numberOfRooms">
+
+    </div>
+    <!-- documnet.getElementById('numberOfRooms').innerText = numberOfRooms; // property binding -->
+</div>
+
+<!-- {{ rooms ?? 'No rooms' }} -->
+
+<!-- {{ roomList | json}} -->
+
+<div *ngIf="rooms.availableRooms > 0">
+<cahotel-rooms-list [rooms]="roomList"></cahotel-rooms-list>
+</div>
+
+<!-- Event Binding -->
+<button (click)="toggle()">Toggle</button>
+
