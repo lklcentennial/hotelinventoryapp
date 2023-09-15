@@ -1,5 +1,13 @@
 <h1>Hello World!</h1>
-<cahotel-rooms></cahotel-rooms>
+<!-- <cahotel-rooms></cahotel-rooms> -->
+<cahotel-container>
+  <h1>This is from ng-content</h1>
+  <cahotel-rooms></cahotel-rooms>
+  <cahotel-employee></cahotel-employee>
+</cahotel-container>
+
+<div #name>
+</div>
 
 <!-- <div [ngSwitch]="role">
   <div *ngSwitchCase="'User'">
@@ -11,4 +19,8 @@
   <div *ngSwitchDefault>
     You are not authorized to view this page!
   </div>
+</div> -->
+
+<!-- <div>
+  <ng-template #user></ng-template>
 </div> -->

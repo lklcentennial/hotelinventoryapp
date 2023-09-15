@@ -1,6 +1,11 @@
 <!-- {{}} interpolation syntax -->
 
-<h1>Welcome to {{ hotelName }}</h1> 
+<!-- <h1>Welcome to {{ hotelName }}</h1>  -->
+
+<cahotel-header></cahotel-header>
+<cahotel-header></cahotel-header>
+<cahotel-header></cahotel-header>
+
 
 <div [hidden]="hideRooms">
     Number of Rooms:
@@ -14,8 +19,18 @@
 
 <!-- {{ roomList | json}} -->
 
-<div *ngIf="rooms.availableRooms > 0">
-<cahotel-rooms-list [rooms]="roomList"></cahotel-rooms-list>
+<div *ngIf="selectedRoom">
+    {{ selectedRoom | json }}
+</div>
+
+<div>
+    <button (click)="addRoom()">Add Room</button>
+</div>
+
+<div *ngIf="hideRooms">
+    <cahotel-rooms-list [rooms]="roomList" [title]="title"
+                        (selectedRoom)="selectRoom($event)">
+    </cahotel-rooms-list>
 </div>
 
 <!-- Event Binding -->
